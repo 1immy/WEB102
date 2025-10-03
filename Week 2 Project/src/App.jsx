@@ -95,17 +95,17 @@ function App() {
           <div className="card-face card-front">
             <h2>Prompt</h2>
             <p>{currentCard.prompt}</p>
-            <span className="flip-hint">Click to flip</span>
+            <span className="flip-hint">Click to reveal answer</span>
           </div>
           <div className="card-face card-back">
             <h2>Answer</h2>
             <p>{currentCard.answer}</p>
-            <span className="flip-hint">Click to flip back</span>
+            <span className="flip-hint">Click to hide answer</span>
           </div>
         </section>
 
         <button type="button" className="next-button" onClick={handleNextCard}>
-          Next Random Card
+          Pull next Card
         </button>
       </main>
     </div>

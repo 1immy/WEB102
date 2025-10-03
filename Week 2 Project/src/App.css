@@ -1,3 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #e5f7e5;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -138,6 +156,10 @@
 }
 
 @media (max-width: 600px) {
+  #root {
+    padding: 3rem 1.25rem;
+  }
+
   .app {
     padding: 1.75rem 1.25rem 2.5rem;
   }
