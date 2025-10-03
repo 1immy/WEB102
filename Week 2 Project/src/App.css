@@ -1,0 +1,153 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2.5rem 1.5rem 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+  color: #0b1623;
+}
+
+.set-details {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.set-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+}
+
+.set-description {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #314056;
+}
+
+.set-count {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #15345b;
+}
+
+.set-count span {
+  font-weight: 700;
+}
+
+.study-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flashcard {
+  width: min(100%, 540px);
+  min-height: 280px;
+  padding: 2rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f3f6ff, #ffffff);
+  box-shadow: 0 22px 40px rgba(17, 39, 73, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.flashcard:focus-visible {
+  outline: 3px solid rgba(63, 122, 255, 0.6);
+  outline-offset: 4px;
+}
+
+.flashcard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(17, 39, 73, 0.18);
+}
+
+.card-face {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.card-face h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2a3d55;
+}
+
+.card-face p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #102033;
+}
+
+.flashcard:not(.flipped) .card-front {
+  display: flex;
+}
+
+.flashcard.flipped .card-back {
+  display: flex;
+}
+
+.flip-hint {
+  font-size: 0.85rem;
+  color: #5d6d85;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.next-button {
+  border: none;
+  background: #3f7aff;
+  color: #fff;
+  padding: 0.9rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.next-button:hover {
+  background: #1f60ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(31, 96, 255, 0.35);
+}
+
+.next-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.next-button:focus-visible {
+  outline: 3px solid rgba(63, 122, 255, 0.5);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1.75rem 1.25rem 2.5rem;
+  }
+
+  .flashcard {
+    padding: 1.75rem 1.25rem;
+    min-height: 240px;
+  }
+
+  .card-face p {
+    font-size: 1rem;
+  }
+}
