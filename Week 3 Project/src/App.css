@@ -1,0 +1,313 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #e5f7e5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: clamp(2rem, 5vh, 4rem) 1.5rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 3vh, 3rem);
+  padding: clamp(2rem, 5vh, 3rem) 1.5rem 3rem;
+  max-width: 1200px;
+  width: 100%;
+  min-height: calc(100vh - clamp(2rem, 5vh, 4rem) * 2);
+  margin: 0 auto;
+  color: #0b1623;
+}
+
+.set-details {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.set-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+}
+
+.set-description {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #314056;
+}
+
+.set-count {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #15345b;
+}
+
+.set-count span {
+  font-weight: 700;
+}
+
+.study-area {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(2rem, 4vh, 2.75rem);
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.guess-form {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 30px rgba(17, 39, 73, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guess-label {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #2a3d55;
+}
+
+.guess-input-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.guess-input-row input {
+  flex: 1;
+  border: 2px solid #c9d4e4;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.guess-input-row input:focus {
+  outline: none;
+  border-color: #3f7aff;
+  box-shadow: 0 0 0 3px rgba(63, 122, 255, 0.18);
+}
+
+.guess-input-row button {
+  border: none;
+  background: #3f7aff;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.guess-input-row button:hover:not(:disabled) {
+  background: #1f60ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(31, 96, 255, 0.35);
+}
+
+.guess-input-row button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.guess-input-row button:disabled {
+  background: #a6b7d6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.feedback-message {
+  margin: 0;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.feedback-message.correct {
+  background: rgba(46, 204, 113, 0.15);
+  color: #1e7a41;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.feedback-message.incorrect {
+  background: rgba(231, 76, 60, 0.15);
+  color: #a23628;
+  border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+.flashcard {
+  width: 100%;
+  max-width: 760px;
+  min-height: clamp(300px, 50vh, 520px);
+  padding: 2rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f3f6ff, #ffffff);
+  box-shadow: 0 22px 40px rgba(17, 39, 73, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.flashcard:focus-visible {
+  outline: 3px solid rgba(63, 122, 255, 0.6);
+  outline-offset: 4px;
+}
+
+.flashcard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(17, 39, 73, 0.18);
+}
+
+.card-face {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.card-face h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2a3d55;
+}
+
+.card-face p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #102033;
+}
+
+.flashcard:not(.flipped) .card-front {
+  display: flex;
+}
+
+.flashcard.flipped .card-back {
+  display: flex;
+}
+
+.flip-hint {
+  font-size: 0.85rem;
+  color: #5d6d85;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-button {
+  border: none;
+  background: #3f7aff;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #1f60ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(31, 96, 255, 0.35);
+}
+
+.nav-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.nav-button:focus-visible {
+  outline: 3px solid rgba(63, 122, 255, 0.5);
+  outline-offset: 4px;
+}
+
+.nav-button:disabled {
+  background: #a6b7d6;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #f0f3fb;
+}
+
+.card-position {
+  font-weight: 600;
+  color: #2a3d55;
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 3rem 1.25rem;
+  }
+
+  .app {
+    padding: 1.75rem 1.25rem 2.5rem;
+  }
+
+  .guess-form {
+    padding: 1.25rem;
+  }
+
+  .guess-input-row {
+    flex-direction: column;
+  }
+
+  .guess-input-row button {
+    width: 100%;
+  }
+
+  .flashcard {
+    padding: 1.75rem 1.25rem;
+    min-height: 260px;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    width: 100%;
+  }
+
+  .card-face p {
+    font-size: 1rem;
+  }
+}
