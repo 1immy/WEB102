@@ -1,0 +1,145 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #0f172a;
+}
+
+.detail__back {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.detail__hero {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.detail__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.detail__hero h1 {
+  margin: 0.35rem 0;
+}
+
+.detail__meta {
+  margin: 0;
+  color: #64748b;
+}
+
+.detail__action {
+  text-decoration: none;
+  background: #4f46e5;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.detail__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.detail__grid article {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.detail__grid h2 {
+  margin-top: 0;
+}
+
+.detail__grid dl {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.detail__grid dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.detail__grid dt {
+  color: #94a3b8;
+}
+
+.detail__grid dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.detail__card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.detail__card h2 {
+  margin-top: 0;
+}
+
+.detail__list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.peer-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.peer-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.peer-list li a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.peer-list li p {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .detail__grid dl div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .peer-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,233 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #0f172a;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.control input,
+.control select {
+  border: 1px solid #cbd5f5;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.control input:focus,
+.control select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stats-grid article {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.stats-grid .label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.stats-grid .value {
+  margin: 0.4rem 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.stats-grid .hint {
+  margin: 0;
+  color: #64748b;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card__header h3 {
+  margin: 0;
+}
+
+.chart-card__header p {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.chart-card__body {
+  margin-top: 1rem;
+}
+
+.chart-card__body--pie {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 180px;
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.list-section {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
+}
+
+.list-section__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.list-section__header h2 {
+  margin: 0;
+}
+
+.list-count {
+  margin: 0;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.empty-state {
+  margin-top: 1rem;
+  color: #64748b;
+}
+
+.brewery-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brewery-card {
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brewery-card__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0 0 0.25rem;
+}
+
+.brewery-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.brewery-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brewery-card h3 a:hover {
+  color: #4f46e5;
+}
+
+.brewery-card__meta {
+  margin: 0.35rem 0 0;
+  color: #64748b;
+}
+
+.brewery-card__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-end;
+}
+
+.brewery-card__cta a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.brewery-card__cta a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .brewery-card__cta {
+    align-items: flex-start;
+  }
+}

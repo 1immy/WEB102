@@ -1,0 +1,108 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: #111827;
+  color: #f9fafb;
+  min-width: 260px;
+}
+
+.sidebar__brand {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.sidebar__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #a5b4fc;
+}
+
+.sidebar__brand h1 {
+  margin: 0.4rem 0;
+  font-size: 1.6rem;
+}
+
+.sidebar__brand p {
+  margin: 0;
+  color: #d1d5db;
+  line-height: 1.4;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__nav-link {
+  text-decoration: none;
+  color: #d1d5db;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar__nav-link--active,
+.sidebar__nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.sidebar__stats {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.sidebar__stats h2 {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c7d2fe;
+}
+
+.sidebar__stats dl {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sidebar__stats dl div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.sidebar__stats dt {
+  color: #94a3b8;
+}
+
+.sidebar__stats dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.sidebar__footnote {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .sidebar__stats {
+    flex: 1 1 100%;
+  }
+}
