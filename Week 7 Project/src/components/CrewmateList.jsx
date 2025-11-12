@@ -4,7 +4,7 @@ export default function CrewmateList({ crew }) {
   if (!crew.length) {
     return (
       <div className="empty-state card">
-        <p>No legends in prep. Lock in your first pick to start theorycrafting comps.</p>
+        <p>No legends in your Fantasy Team exist yet. Add a legend to get started!</p>
       </div>
     )
   }

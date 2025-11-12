@@ -14,10 +14,10 @@ export default function TeamBuilderPage() {
         <div>
           <p className="eyebrow">Apex Legends Character Creator</p>
           <h1>Create your own Apex Fantasy Team!</h1>
-          <p>Change classes, kit and even lore notes to build your Apex Legends team.</p>
+          <p>Change classes, kit and even lore to build your Apex Legends team.</p>
         </div>
         <div className="page-header__stats card">
-          <p>Total legends prepped</p>
+          <p>Legends Created</p>
           <strong>{crew.length}</strong>
         </div>
       </header>
@@ -25,7 +25,7 @@ export default function TeamBuilderPage() {
       <section className="split-panel">
         <CrewmateForm
           heading="Add a new legend"
-          submitLabel="Add to dropship manifest"
+          submitLabel="Add to fantasy team"
           loading={isSaving}
           onSubmit={addCrewmate}
         />
